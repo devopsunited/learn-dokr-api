@@ -5,24 +5,10 @@ const fs = require("fs");
 const path = require("path");
 const bookmarksPath = path.join(__dirname, "../bookmarks.json");
 
-/* fs.readFile(bookmarksPath, async function (err, data) {
-  const json = JSON.parse(data);
-
-  if (json.length)
-    json.forEach((bookmark) => {
-
-      router.get("/" + bookmark.cmd.replace(" ", ""), async (req, res) => {
-        console.log("hit /console bookmarked command");
-
-        const message = await command(`docker ${bookmark.cmd}`);
-        res.json(JSON.stringify(message));
-      });
-
-    });
-}); */
+router.use(bodyParser.json())
 
 router.post("/console", async (req, res) => {
-  console.log("hit /console");
+  console.log("hit /console")
 
   const cmd = req.body.cmd;
   const message = await command(`docker ${cmd}`);
