@@ -1,4 +1,3 @@
-const command = require("./utils/command")
 const express = require("express")
 const cors = require("cors")
 
