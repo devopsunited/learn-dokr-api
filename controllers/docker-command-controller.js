@@ -30,7 +30,7 @@ router.post("/console", async (req, res) => {
   res.json(JSON.stringify(message));
 });
 
-router.get("/console/bookmark/:cmd", (req, res) => {
+router.get("/bookmark/:cmd", (req, res) => {
   fs.readFile(bookmarksPath, async function (err, data) {
     const json = JSON.parse(data);
     const bookmark = json.filter((bookmark) => bookmark.cmd === req.params.cmd)
