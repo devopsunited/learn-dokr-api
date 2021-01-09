@@ -1,7 +1,8 @@
 # learn-dokr-api
 A little web-api to learn or simply use docker via a browser UI
 
-IN PROGRESS
+IN PROGRESS 
+NOT WORKING (YET ?) ON WINDOWS
 
 #### To use it, docker must be user accessible (not root)
 
