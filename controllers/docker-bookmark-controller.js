@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const path = require("path");
 const bookmarksPath = path.join(__dirname, "../bookmarks.json");
-const command = require("../utils/command");
+const command = require("../utils/command-with-columns");
 const fs = require("fs");
 const bodyParser = require("body-parser");
 router.use(bodyParser.json());
@@ -17,7 +17,7 @@ router.post("/", (req, res) => {
     const json = JSON.parse(data);
 
     const message = await command(`docker ${cmd}`);
-    if (message === 1) {
+    if (typeof message === "number" && message) {
       res.json({
         error: 1,
         message: "cannot bookmark a command returning an error",

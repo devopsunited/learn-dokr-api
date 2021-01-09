@@ -13,7 +13,7 @@ server.use("/cmd", DockerCmdController);
 server.use("/bookmark", DockerBookmarkController);
 
 
-PORT = process.env.PORT || 3888
+PORT = process.env.PORT || 5533
 
 server.listen(PORT, () => {
     console.log(
